@@ -1,10 +1,9 @@
 var gulp = require('gulp');
 var typescript = require('gulp-typescript');
 var webpack = require('webpack-stream');
+var path = require('path');
 
-gulp.task('build', ['webpack', 'ts']);
-// Because gulp.run is deprecated, don't use gulp.run
-
+/*
 gulp.task('ts', function() {
     console.log('ts');
     var options = {
@@ -21,20 +20,28 @@ gulp.task('ts', function() {
    .pipe(typescript(options))
    .pipe(gulp.dest('./ts2js'));
 });
+*/
 
-gulp.task('webpack', ['ts'], function() {
+gulp.task('webpack', function() {
+    console.log(path.join(__dirname,'node_modules'))
     var options = {
-        entry: './ts2js/index.js',
+        entry: './ts/app.ts',
         output: {
             filename: 'bundle.js'
         },
         resolve: {
-            extensions: ['', '.js']
+            root: [path.join(__dirname,'node_modules')],
+            extensions: ['', '.ts']
+        },
+        module: {
+            loaders: [
+                {test: /\.ts$/, loader: 'ts-loader'}
+           ]
         }
     };
 
     gulp.src([
-        './ts2js/*.js',
+        './ts/*.ts',
     ])
    .pipe(webpack(options))
    .pipe(gulp.dest('./dest'));
