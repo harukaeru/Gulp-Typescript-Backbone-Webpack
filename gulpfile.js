@@ -23,7 +23,6 @@ gulp.task('ts', function() {
 */
 
 gulp.task('webpack', function() {
-    console.log(path.join(__dirname,'node_modules'))
     var options = {
         entry: './ts/app.ts',
         output: {
@@ -44,8 +43,7 @@ gulp.task('webpack', function() {
         './ts/*.ts',
     ])
    .pipe(webpack(options))
-   .pipe(gulp.dest('./dest'));
-   console.log("finish");
+   .pipe(gulp.dest('./dist'));
 });
 
 
