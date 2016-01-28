@@ -14,6 +14,7 @@ v5.0.0
 ```
 
 
+### npm
 Command example: `$ npm install ts-loader --save-dev`
 ```sh
 $ npm install jquery  
@@ -27,6 +28,7 @@ $ npm install webpack-stream  # gulp-webpack is deprecated.
 -> `package.json`
 
 
+### tsd
 Command example: `$ tsd install underscore --action install --resolve --save`
 ```sh
 $ tsd install jquery
@@ -35,7 +37,9 @@ $ tsd install backbone-global  # Not backbone. backbone.d.ts is Not EXISTED NOW.
 ```
 -> `src/ts/tsd.json`
 
-backbone-global.d.ts
+
+### edit
+src/ts/typings/backbone/backbone-global.d.ts
 ```
 $ vim src/ts/typings/backbone/backbone-global.d.ts
 /// <reference path="../jquery/jquery.d.ts" />
@@ -44,6 +48,8 @@ $ vim src/ts/typings/backbone/backbone-global.d.ts
 /// <reference path="../underscore/underscore.d.ts" />
 ```
 
+
+### Run
 ```sh
 $ gulp webpack  # See gulpfile.js / Task 'webpack' will run.
 ```
