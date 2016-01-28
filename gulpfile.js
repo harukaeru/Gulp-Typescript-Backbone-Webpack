@@ -26,7 +26,7 @@ gulp.task('webpack', function() {
     var options = {
         entry: './src/ts/app.ts',
         output: {
-            filename: 'bundle.js'
+            filename: 'app.js'
         },
         resolve: {
             root: [path.join(__dirname,'node_modules')],

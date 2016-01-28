@@ -23,4 +23,4 @@ var user = new Student("Johnny", "Kaeru");
 
 console.log(greeter(user));
 
-export = greeter
+export = greeter;
