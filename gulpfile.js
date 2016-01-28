@@ -24,7 +24,7 @@ gulp.task('ts', function() {
 
 gulp.task('webpack', function() {
     var options = {
-        entry: './ts/app.ts',
+        entry: './src/ts/app.ts',
         output: {
             filename: 'bundle.js'
         },
@@ -40,7 +40,7 @@ gulp.task('webpack', function() {
     };
 
     gulp.src([
-        './ts/*.ts',
+        './src/ts/*.ts',
     ])
    .pipe(webpack(options))
    .pipe(gulp.dest('./dist'));
