@@ -7,7 +7,7 @@ gulp.task('build', ['ts', 'webpack']);
 
 gulp.task('ts', function() {
     var options = {
-        // out: 'index.js',
+        out: 'index.js',
         target: 'ES5',
         module: 'commonjs',
         removeComments: true
