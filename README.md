@@ -1,5 +1,7 @@
 # Gulp-Typescript-Backbone-Webpack
-よくわかってないちん
+
+## I DO not guaranteed here correct or not.
+
 ```sh
 $ gulp webpack  # -> dist/app.js
 ```
