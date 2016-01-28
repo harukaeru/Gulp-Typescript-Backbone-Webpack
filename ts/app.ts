@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="./typings/tsd.d.ts" />
 import greeter = require('./gr');  
 console.log(greeter("World"));
 import $ = require('jquery');
