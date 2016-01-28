@@ -6,6 +6,7 @@ gulp.task('build', ['webpack', 'ts']);
 // Because gulp.run is deprecated, don't use gulp.run
 
 gulp.task('ts', function() {
+    console.log('ts');
     var options = {
         out: './ts2js/index.js',
         target: 'ES5',
@@ -21,7 +22,7 @@ gulp.task('ts', function() {
    .pipe(gulp.dest('./ts2js'));
 });
 
-gulp.task('webpack', function() {
+gulp.task('webpack', ['ts'], function() {
     var options = {
         entry: './ts2js/index.js',
         output: {
